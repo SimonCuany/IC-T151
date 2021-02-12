@@ -1,0 +1,51 @@
+[
+  {
+    "idSnow": "B126",
+    "Marque": "Burton",
+    "Boots": "Goofy",
+    "Type": "Alpin",
+    "disponibilite": 2
+  },
+  {
+    "idSnow": "N766",
+    "Marque": "Niedecker",
+    "Boots": "Regular",
+    "Type": "Curved",
+    "disponibilite": 24
+  },
+  {
+    "idSnow": "B249",
+    "Marque": "Burton",
+    "Boots": "Regular",
+    "Type": "Alpin",
+    "disponibilite": 11
+  },
+  {
+    "idSnow": "R226",
+    "Marque": "RipCurl",
+    "Boots": "Goofy",
+    "Type": "Curved",
+    "disponibilite": 122
+  },
+  {
+    "idSnow": "E461",
+    "Marque": "Elan",
+    "Boots": "Regular",
+    "Type": "Alpin",
+    "disponibilite": 32
+  },
+  {
+    "idSnow": "A552",
+    "Marque": "RipCurl",
+    "Boots": "Goofy",
+    "Type": "Curved",
+    "disponibilite": 52
+  },
+  {
+    "idSnow": "CPNV",
+    "Marque": "CPNV",
+    "Boots": "CPNV",
+    "Type": "CPNV",
+    "disponibilite": "10"
+  }
+]
