@@ -48,6 +48,7 @@ foreach ($snows as $snow) //$tab contient une ligne
     echo "<td><a href='snow_update.php?idSnow=" . $snow['idSnow'] . "'>Modifier</a></td>";
 }
 echo "</table>";
+
 ?>
 <br>
 <h3><a href='snow_add.php'>Ajouter un snow</a></h3>
