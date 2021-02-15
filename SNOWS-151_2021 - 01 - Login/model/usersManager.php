@@ -17,19 +17,21 @@ function isLoginCorrect($userEmailAddress, $userPsw){
 
     if (count($queryResult) == 1)
     {
-        $result=true;
+        $userHashPsw = $queryResult[0]['userHashPsw'];
+        $result = password_verify($userPsw,$userHashPsw);
     }
 
+    var_dump($result );
     return $result;
 }
 
 function registerNewAccount($userEmailAddress, $userPsw){
     $strSeparator = '\'';
-    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userPsw`) VALUE '. $strSeparator . $userEmailAddress . $strSeparator. ' and userPsw = '. $strSeparator . $userPsw . $strSeparator;
 
+    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
+    $registerQuery = 'INSERT INTO users (userEmailAddress, userHashPsw) VALUES ('.$userEmailAddress.','. $userHashPsw.')';
     require_once 'model/dbConnector.php';
-    //echo $loginQuery;
-    $queryResult = executeQuerySelect($loginQuery);
-
+    $queryResult = executeQuerySelect($registerQuery);
+return $queryResult;
 }
 

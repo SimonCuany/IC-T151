@@ -71,7 +71,7 @@ function openDBConnexion()
     $hostname = 'localhost';
     $port = 3306;
     $charset = 'utf8';
-    $dbName = 'snowsLogin';
+    $dbName = 'snowslogin';
     $userName = 'root'; //par compatibilité avec le dépôt swisscenter
     $userPwd = 'root';
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;

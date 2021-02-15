@@ -20,7 +20,7 @@ USE `snowsLogin`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `userEmailAddress` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `userPsw` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `userHashPsw` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `pseudo` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `userEmailAddress` (`userEmailAddress`)
