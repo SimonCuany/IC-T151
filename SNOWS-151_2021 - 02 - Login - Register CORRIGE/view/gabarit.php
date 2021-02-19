@@ -72,6 +72,7 @@
             <div class="nav-collapse collapse">
               <ul class="nav nav-pills ddmenu">
                   <li><a href="index.php?action=home">Home</a></li>
+                  <li><a href="index.php?action=snows">Snows</a></li>
                   <?php if(!isset($_SESSION['userEmailAddress'])) :?>
                       <li><a href="index.php?action=login">Login</a></li>
                   <?php else :?>
@@ -151,7 +152,7 @@
                 <span style="text-transform:none;">02/01/2019</span>
             </p>
             <p>
-                <a href="#" title="">Paul champion suisse !</a><br />
+                <a href="https://www.sbv-usp.ch/fr/ces-viticulteurs-et-ces-cavistes-concourront-pour-le-titre-de-champion-suisse/" title="">Paul champion suisse !</a><br />
                 <span style="text-transform:none;">19/03/2019</span>
             </p>
             <p>

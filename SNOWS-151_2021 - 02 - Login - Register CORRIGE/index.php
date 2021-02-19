@@ -26,6 +26,9 @@ if (isset($_GET['action'])) {
         case 'logout' :
             logout();
             break;
+        case 'snows' :
+            showSnows();
+            break;
         default :
             home();
     }

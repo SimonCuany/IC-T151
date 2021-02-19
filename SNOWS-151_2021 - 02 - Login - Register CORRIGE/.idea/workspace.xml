@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 133" />
   <component name="ProjectId" id="1UAhtrKNcfUD5WEQjbJNLTBw6Wh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -22,7 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ProjetWeb_Annonces/Sotish" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,7 +34,7 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RunManager">
-    <configuration name="travail_151" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="91">
+    <configuration name="travail_151" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8888">
       <method v="2" />
     </configuration>
   </component>
@@ -68,6 +68,7 @@
       <workItem from="1575635401576" duration="1403000" />
       <workItem from="1613125238645" duration="1273000" />
       <workItem from="1613373034383" duration="12000" />
+      <workItem from="1613718611182" duration="7611000" />
     </task>
     <servers />
   </component>
@@ -75,9 +76,41 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="773" y="294" key="FileChooserDialogImpl" timestamp="1613373044709">
+    <state x="700" y="202" key="#PHP" timestamp="1613718633408">
       <screen x="66" y="0" width="1854" height="1080" />
     </state>
-    <state x="773" y="294" key="FileChooserDialogImpl/66.0.1854.1080@66.0.1854.1080" timestamp="1613373044709" />
+    <state x="700" y="202" key="#PHP/66.0.1854.1080@66.0.1854.1080" timestamp="1613718633408" />
+    <state x="447" y="194" width="1092" height="811" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613725310626">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="447" y="194" width="1092" height="811" key="#com.intellij.execution.impl.EditConfigurationsDialog/66.0.1854.1080@66.0.1854.1080" timestamp="1613725310626" />
+    <state x="773" y="294" key="FileChooserDialogImpl" timestamp="1613718433085">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="773" y="294" key="FileChooserDialogImpl/66.0.1854.1080@66.0.1854.1080" timestamp="1613718433085" />
+    <state width="1811" height="280" key="GridCell.Tab.0.bottom" timestamp="1613725313304">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="280" key="GridCell.Tab.0.bottom/66.0.1854.1080@66.0.1854.1080" timestamp="1613725313304" />
+    <state width="1811" height="280" key="GridCell.Tab.0.center" timestamp="1613725313304">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="280" key="GridCell.Tab.0.center/66.0.1854.1080@66.0.1854.1080" timestamp="1613725313304" />
+    <state width="1811" height="280" key="GridCell.Tab.0.left" timestamp="1613725313304">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="280" key="GridCell.Tab.0.left/66.0.1854.1080@66.0.1854.1080" timestamp="1613725313304" />
+    <state width="1811" height="280" key="GridCell.Tab.0.right" timestamp="1613725313304">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="280" key="GridCell.Tab.0.right/66.0.1854.1080@66.0.1854.1080" timestamp="1613725313304" />
+    <state x="827" y="463" key="NewPhpFileDialog" timestamp="1613719278435">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="827" y="463" key="NewPhpFileDialog/66.0.1854.1080@66.0.1854.1080" timestamp="1613719278435" />
+    <state x="810" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613726349391">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="810" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/66.0.1854.1080@66.0.1854.1080" timestamp="1613726349391" />
   </component>
 </project>

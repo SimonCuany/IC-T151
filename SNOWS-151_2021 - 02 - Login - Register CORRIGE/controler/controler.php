@@ -52,12 +52,12 @@ function register($registerRequest){
 
         //extract register parameters
         $userEmailAddress = $registerRequest['inputUserEmailAddress'];
-        $userPsw = $registerRequest['inputUserPsw'];
+        $userHashPsw = $registerRequest['inputUserPsw'];
         $userPswRepeat = $registerRequest['inputUserPswRepeat'];
 
-        if ($userPsw == $userPswRepeat){
+        if ($userHashPsw == $userPswRepeat){
             require_once "model/usersManager.php";
-            if (registerNewAccount($userEmailAddress, $userPsw)){ //Cas inscription tout OK, on crée direct la session
+            if (registerNewAccount($userEmailAddress, $userHashPsw)){ //Cas inscription tout OK, on crée direct la session
                 createSession($userEmailAddress);
                 $_GET['registerError'] = false;
                 $_GET['action'] = "home";
@@ -87,3 +87,12 @@ function logout(){
     $_GET['action'] = "home";
     require "view/home.php";
 }
+
+
+function showSnows(){
+    require_once("model/snowManager.php");
+    $snows=getSnows();
+    require "view/snowsSeller.php";
+
+}
+
