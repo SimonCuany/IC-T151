@@ -9,12 +9,14 @@
  * Git source  :    [link]
  */
 
-function home(){
+function home()
+{
     $_GET['action'] = "home";
     require "view/home.php";
 }
 
-function login($loginRequest){
+function login($loginRequest)
+{
     //if a login request was submitted
     if (isset($loginRequest['inputUserEmailAddress']) && isset($loginRequest['inputUserPsw'])) {
         //extract login parameters
@@ -24,8 +26,8 @@ function login($loginRequest){
         //try to check if user/psw are matching with the database
         require_once "model/usersManager.php";
         if (isLoginCorrect($userEmailAddress, $userPsw)) {
-            $userType=getUserType($userEmailAddress);
-            createSession($userEmailAddress,$userType);
+            $userType = getUserType($userEmailAddress);
+            createSession($userEmailAddress, $userType);
             $_GET['loginError'] = false;
             $_GET['action'] = "home";
             require "view/home.php";
@@ -34,21 +36,24 @@ function login($loginRequest){
             $_GET['action'] = "login";
             require "view/login.php";
         }
-    }else{ //the user does not yet fill the form
+    } else { //the user does not yet fill the form
         $_GET['action'] = "login";
         require "view/login.php";
     }
 }
+
 /**
  * This function is designed to create a new user session
  * @param $userEmailAddress : user unique id
  */
-function createSession($userEmailAddress,$userType){
+function createSession($userEmailAddress, $userType)
+{
     $_SESSION['userEmailAddress'] = $userEmailAddress;
-    $_SESSION['userType']=$userType;
+    $_SESSION['userType'] = $userType;
 }
 
-function register($registerRequest){
+function register($registerRequest)
+{
     //variable set
     if (isset($registerRequest['inputUserEmailAddress']) && isset($registerRequest['inputUserPsw']) && isset($registerRequest['inputUserPswRepeat'])) {
 
@@ -57,24 +62,24 @@ function register($registerRequest){
         $userPsw = $registerRequest['inputUserPsw'];
         $userPswRepeat = $registerRequest['inputUserPswRepeat'];
 
-        if ($userPsw == $userPswRepeat){
+        if ($userPsw == $userPswRepeat) {
             require_once "model/usersManager.php";
-            if (registerNewAccount($userEmailAddress, $userPsw)){ //Cas inscription tout OK, on crée direct la session
-                createSession($userEmailAddress,1);
+            if (registerNewAccount($userEmailAddress, $userPsw)) { //Cas inscription tout OK, on crée direct la session
+                createSession($userEmailAddress, 1);
                 $_GET['registerError'] = false;
                 $_GET['action'] = "home";
                 require "view/home.php";
-            } else{ //Cas requête refusée (email existant)
+            } else { //Cas requête refusée (email existant)
                 $_GET['registerError'] = true;
                 $_GET['action'] = "register";
                 require "view/register.php";
             }
-        }else{ //Cas inscription pas possible, il faut recommencer
+        } else { //Cas inscription pas possible, il faut recommencer
             $_GET['registerError'] = true;
             $_GET['action'] = "register";
             require "view/register.php";
         }
-    }else{ //Cas où on arrive sans données
+    } else { //Cas où on arrive sans données
         $_GET['action'] = "register";
         require "view/register.php";
     }
@@ -83,44 +88,47 @@ function register($registerRequest){
 /**
  * This function is designed to manage logout request
  */
-function logout(){
+function logout()
+{
     $_SESSION = array();
     session_destroy();
     $_GET['action'] = "home";
     require "view/home.php";
 }
 
-function displaySnows(){
+function displaySnows()
+{
     require_once("model/snowsManager.php");
 
     //solution sans isset (si non loggé, @$_SESSION['userType'] renvoie false)
-    if (@$_SESSION['userType']==2){
-        $snows=getSnows();
+    if (@$_SESSION['userType'] == 2) {
+        $snows = getSnows();
         require "view/snowsSeller.php";
-    } else{ // cas client
-        if (isset($_POST['fSearch'])){ //avec recherche
-            $snows=getSnowsSearch($_POST['fSearch']);
+    } else { // cas client
+        if (isset($_POST['fSearch'])) { //avec recherche
+            $snows = getSnowsSearch($_POST['fSearch']);
         } else { //sans recherche
-            $snows=getSnows();
+            $snows = getSnows();
         }
         require "view/snows.php";
     }
 }
 
-function addSnow(){
+function addSnow()
+{
     //Cette fonction est pour ajouter un snow
 
     if (isset($_POST['fcode'])) {
         //cas où on ajoute vraiment un snow en BD
         require_once("model/snowsManager.php");
-        $result=addSnowBD($_POST['fcode'],$_POST['fbrand'],$_POST['fmodel'],$_POST['fSnowLength'],
-            $_POST['fQtyAvailable'], $_POST['fDescription'],$_POST['fDailyPrice'],
-            $_POST['fPhoto'],$_POST['factive']);
+        $result = addSnowBD($_POST['fcode'], $_POST['fbrand'], $_POST['fmodel'], $_POST['fSnowLength'],
+            $_POST['fQtyAvailable'], $_POST['fDescription'], $_POST['fDailyPrice'],
+            $_POST['fPhoto'], $_POST['factive']);
 
-        if ($result){ //cas OK si result=1
+        if ($result) { //cas OK si result=1
             displaySnows(); //rappel de l'affichage des snows.
         } else { //cas d'erreur, ajout impossible
-            $adderror="Erreur d'ajout de snow (attention doublon ou type de données)";
+            $adderror = "Erreur d'ajout de snow (attention doublon ou type de données)";
             require "view/addSnow.php";
         }
 
@@ -130,22 +138,24 @@ function addSnow(){
     }
 
 
-
 }
 
-function delSnow($code){
+function delSnow($code)
+{
     //Cette fonction détruit le snow correspondant au code et rappelle la liste
     require_once("model/snowsManager.php");
     delSnowBD($code); //appel de la fonction en BD
     displaySnows(); //rappel de l'affichage des snows
 }
 
-function displayCart(){
+function displayCart()
+{
     //Cette fonction affiche le panier
     require "view/cart.php";
 }
 
-function delCart($index){
+function delCart($index)
+{
     //Supprime la ligne $index du panier et réaffiche le panier
     // deux syntaxes pour supprimer la ligne $index
     //unset($_SESSION['cart'][$index]); //laisse le trou (ne renumérote pas)
@@ -154,27 +164,64 @@ function delCart($index){
     require "view/cart.php";
 }
 
-function addSnowCart($code){
+function addSnowCart($code)
+{
     //ajoute au panier le snow demandé (avec durée de 1 jour, quantité 1)
     //pour l'instant en date fixe
-   $newSnowLeasing = array('code' => $code, 'dateD' => date("Y-m-d"), 'nbD' => 1, 'qty' => 1);
-    if (!isset($_SESSION['cart'])){ //cas où le panier n'existait pas
-        $_SESSION['cart']=[];
+    $newSnowLeasing = array('code' => $code, 'dateD' => date("Y-m-d"), 'nbD' => 1, 'qty' => 1);
+    if (!isset($_SESSION['cart'])) { //cas où le panier n'existait pas
+        $_SESSION['cart'] = [];
         echo "nouveau";
     }
     //array_push($_SESSION['cart'], $newSnowLeasing); //ajouter une ligne (syntaxe 1)
-    $_SESSION['cart'][]=$newSnowLeasing; //ajouter une ligne au panier (syntaxe 2)
+    $_SESSION['cart'][] = $newSnowLeasing; //ajouter une ligne au panier (syntaxe 2)
     require "view/cart.php";
 
 }
 
-function qtyChange($key, $modif){
+function qtyChange($key, $modif)
+{
 
-    if ($modif += $_SESSION['cart'][$key]['qty']>0){
-        $_SESSION['cart'][$key]['qty']+=$modif;
+    if ($modif + $_SESSION['cart'][$key]['qty'] > 0) {
+        $_SESSION['cart'][$key]['qty'] += $modif;
         require "view/cart.php";
-    }else{
+    } else {
         delCart($key);
     }
 
 }
+
+function durChange($key, $modif)
+{
+
+    if ($modif + $_SESSION['cart'][$key]['qty'] > 0) {
+        $_SESSION['cart'][$key]['qty'] += $modif;
+        require "view/cart.php";
+    } else {
+        delCart($key);
+    }
+
+}
+
+function sessionReset()
+{
+    $_SESSION['cart'] = [];
+    $_GET['action'] = "home";
+    require "view/home.php";
+
+}
+
+function writeCart(){
+
+    if (count($_SESSION['cart']) == 0){
+
+
+}
+
+    $_GET['action'] = "home";
+    require "view/home.php";
+
+}
+
+
+?>

@@ -46,6 +46,15 @@ if (isset($_GET['action'])) {
         case 'qtyChange':
             qtyChange($_GET['key'],['modif']);
             break;
+        case 'durChange':
+            durChange($_GET['key'],['modif']);
+            break;
+        case 'sessionReset':
+          sessionReset();
+            break;
+        case 'writeCart':
+            writeCart();
+            break;
         default :
             home();
     }

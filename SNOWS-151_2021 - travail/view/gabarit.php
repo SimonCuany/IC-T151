@@ -73,13 +73,14 @@
               <ul class="nav nav-pills ddmenu">
                   <li><a href="index.php?action=home">Home</a></li>
                   <li><a href="index.php?action=snows">Nos snows</a></li>
-                  <li><a href="index.php?action=displayCart">Cart</a></li>
+                  <li><a href="index.php?action=displayCart">Panier (<?=@count($_SESSION['cart']) ?>)</a></li>
                   <?php if(!isset($_SESSION['userEmailAddress'])) :?>
                       <li><a href="index.php?action=login">Login</a></li>
                   <?php else :?>
                       <li><a href="index.php?action=logout">Logout</a></li>
                     <?php echo "<h6>Bonjour ".$_SESSION['userEmailAddress']." ".$_SESSION['userType']."</h6>";
                     endif; ?>
+                  <li><a href="index.php?action=sessionReset">Reset Session</a></li>
               </ul>
             </div>
           </div>
@@ -115,7 +116,7 @@
         <!--__________CONTENU__________-->
 
           <div class="span12" id="divMain">
-            <?=$content; ?>
+            <?=$content;?>
           </div>
 
         <!--________FIN CONTENU________-->
